@@ -1,0 +1,13 @@
+#!/bin/python2
+
+import json
+import markdown
+import sys
+
+o = json.loads(sys.stdin.read())
+for l in o:
+    l['content'] = markdown.markdown(l['content'])
+    if 'author' in l:
+        l['author'] = markdown.markdown('&mdash;'+l['author'])
+sys.stdout.write(json.dumps(o))
+sys.stdout.write('\n')

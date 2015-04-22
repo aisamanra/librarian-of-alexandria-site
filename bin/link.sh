@@ -1,5 +1,8 @@
 #!/bin/sh
 
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+PATH=$DIR:$PATH
+
 if [ "$1" = "all" ]; then
     ARGS="data/links/*"
     FOCUS=false

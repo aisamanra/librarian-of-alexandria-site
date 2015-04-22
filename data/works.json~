@@ -1,0 +1,13 @@
+[ { "category": "Fasicles"
+  , "slug": "fascicles"
+  }
+, { "category": "Stories"
+  , "slug": "stories"
+  }
+, { "category": "Poems"
+  , "slug": "poems"
+  }
+, { "category": "Comics"
+  , "slug": "comics"
+  }
+]

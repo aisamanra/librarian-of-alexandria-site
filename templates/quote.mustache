@@ -4,11 +4,11 @@
       {{{content}}}
     {{#author}}
       <div class="author">
-        &mdash;{{{author}}}
+        {{{author}}}
       </div>
     {{/author}}
     {{^focus}}
-      <div class="quotelink"><a href="#{{id}}" onClick="doHighlight('{{id}}')">#{{id}}</a></div>
+      <div class="quotelink"><a href="{{id}}" onClick="doHighlight('{{id}}')">#{{id}}</a></div>
     {{/focus}}
     </div>
   {{/quotelist}}
