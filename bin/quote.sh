@@ -1,13 +1,13 @@
-#!/bin/sh
+#!/bin/sh -e
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 PATH=$DIR:$PATH
 
-if [ "$1" = "all" ]; then
-    ARGS="data/quotes/*"
+if [ "$2" = "all" ]; then
+    ARGS="$1/quotes/*"
     FOCUS=false
 else
-    ARGS="$1"
+    ARGS="$2"
     FOCUS=true
 fi
 COPY="all quotes used under fair use &c &c"

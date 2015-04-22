@@ -1,6 +1,0 @@
-author: Abelson & Sussman, SICP
-content: First, we want to establish the idea that a computer language is not just
-  a way of getting a computer to perform operations but rather that it is a novel
-  formal medium for expressing ideas about methodology. Thus, programs must be written
-  for people to read, and only incidentally for machines to execute.
-id: ca3d43e5-a815-4d57-a39b-707da09977dd
