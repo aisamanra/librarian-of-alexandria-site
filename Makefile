@@ -8,6 +8,10 @@ pages=$(OUTDIR)/quotes/index.html $(OUTDIR)/quips/index.html \
   $(OUTDIR)/links/index.html $(OUTDIR)/category/index.html \
   $(OUTDIR)/index.html
 
+static_tgt=$(OUTDIR)/static/jquery.js \
+  $(OUTDIR)/static/main.css \
+  $(OUTDIR)/static/quotes.js
+
 # We find all the stuff we want to generate...
 quotes_src=$(wildcard $(DATADIR)/quotes/*)
 quips_src=$(wildcard $(DATADIR)/quips/*)
@@ -35,7 +39,7 @@ works_tgt=$(works_src:%=$(OUTDIR)/%/index.html)
 
 
 all: $(pages) $(quotes_tgt) $(quips_tgt) $(links_tgt) $(works_tgt) \
-  $(cats_tgt) 
+  $(cats_tgt) $(static_tgt)
 
 # A lot of these are boringly similar: probably should come up with a way of abstracting
 # this common pattern, but, y'know, Make...
@@ -77,6 +81,10 @@ $(OUTDIR)/category/index.html: templates/worklist.mustache templates/main.mustac
 	bin/all-categories.sh $(DATADIR) >$@
 
 $(OUTDIR)/index.html: $(OUTDIR)/index/index.html
+	cp $< $@
+
+$(OUTDIR)/static/%: static/%
+	mkdir -p `dirname $@`
 	cp $< $@
 
 clean:
