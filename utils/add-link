@@ -1,0 +1,34 @@
+#!/usr/bin/python2
+
+import json
+import os
+import subprocess
+import sys
+import time
+import uuid
+
+repo = os.getenv('LIB_REPO') or \
+       os.getenv('HOME') + '/projects/lib-data'
+os.chdir(repo)
+
+for url in sys.argv[1:]:
+    r = {}
+    new_id = uuid.uuid4()
+    r['url'] = url
+    r['id'] = str(new_id)
+
+    new_file = repo + '/links/' + str(new_id)
+    with open(new_file, 'w') as f:
+        json.dump(r, f)
+
+    subprocess.call(['git', 'add', new_file]) and \
+        sys.stderr.write('Unable to add new file')
+
+if sys.argv[1:]:
+    msg = 'New link(s) added at {0}'.format(
+        time.strftime('%Y-%m-%d/%H-%M', time.localtime()))
+    subprocess.call(['git', 'commit', '-m', msg]) and \
+        sys.stderr.write('Unable to commit new file')
+    subprocess.call(['git', 'push']) and \
+        sys.stderr.write('Unable to push')
+    sys.stdout.write('Successful!\n')

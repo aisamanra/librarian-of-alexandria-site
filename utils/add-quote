@@ -1,0 +1,39 @@
+#!/usr/bin/python2
+
+import json
+import os
+import subprocess
+import sys
+import time
+import yaml
+import uuid
+
+repo = os.getenv('LIB_REPO') or \
+       os.getenv('HOME') + '/projects/lib-data'
+
+def ensure(obj, key):
+    if key not in obj:
+        sys.stderr.write('Missing `{0}` field'.format(key))
+        sys.exit(1)
+
+r = yaml.load(sys.stdin.read())
+ensure(r, 'content')
+ensure(r, 'author')
+new_id = uuid.uuid4()
+r['id'] = str(new_id)
+
+new_file = repo + '/quotes/' + str(new_id)
+with open(new_file, 'w') as f:
+    json.dump(r, f)
+
+msg = 'New quote added at {0}'.format(
+    time.strftime('%Y-%m-%d/%H-%M', time.localtime()))
+
+os.chdir(repo)
+subprocess.call(['git', 'add', new_file]) and \
+    sys.stderr.write('Unable to add new file')
+subprocess.call(['git', 'commit', '-m', msg]) and \
+    sys.stderr.write('Unable to commit new file')
+subprocess.call(['git', 'push']) and \
+    sys.stderr.write('Unable to push')
+sys.stdout.write('Successful!\n')
