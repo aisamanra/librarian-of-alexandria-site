@@ -8,7 +8,7 @@ def coerce(arg):
   if not arg: return None
   if arg[0] == '@':
     try:
-      with open(arg[0]) as f: return coerce(f.read())
+      with open(arg[1:]) as f: return coerce(f.read())
     except: pass
   if arg == '-': return coerce(sys.stdin.read())
   try:    return yaml.loads(arg)
