@@ -1,0 +1,143 @@
+@font-face {
+    /*
+       Junction from Caroline Hadilaksono,
+       via the League of Movable Type
+       ( http://www.theleagueofmoveabletype.com/fonts/1-junction )
+       Thank you!
+    */
+    font-family: junction;
+    src: url("junction.otf");
+}
+
+body {
+    color: #eeeeee;
+    line-height: 150%;
+    background-color: #070707;
+    font-family: junction, "Arial", sans-serif;
+}
+
+a:link {
+    color: #876ed7;
+}
+
+a:visited {
+    color: #3914af;
+}
+
+.header {
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 200%;
+}
+
+.menu {
+    background-color: #070707;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 95%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.all {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #111111;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.contents {
+    text-indent: 20px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+pre {
+    text-indent: 0px;
+    padding-left: 20px;
+}
+
+.backforward {
+    margin-top: 10px;
+    text-indent: 0px;
+    text-align: center;
+}
+
+.footer {
+    background-color: #070707;
+    text-align: center;
+    width: 95%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.quote {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #070707;
+    margin: 20px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.link {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #070707;
+    padding: 20px;
+    margin: 20px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.maintext {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #070707;
+    padding: 20px;
+    margin: 20px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.author { text-align: right; }
+.name { font-size: large; }
+.description { font-size: small; }
+
+.url {
+  font-size: small;
+  text-align: right;
+}
+
+.quotelink {
+    font-size: small;
+    text-align: right;
+}
+
+.permalink {
+    font-size: small;
+    text-align: right;
+}

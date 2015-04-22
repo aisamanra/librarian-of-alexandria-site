@@ -1,0 +1,6 @@
+author: G_Morgan
+content: This is one of the reasons Lisp doesn't get anywhere. The trend to promote
+  features so clever that you stop thinking about your problem and start thinking
+  about the clever features. CL's loop is so powerful that people invented functional
+  programming so that they'd never have to use it.
+id: e2736ea7-ad49-46eb-b055-ab5fdf91821f

@@ -1,0 +1,42 @@
+{{! title, contents, usejs=False, onLoad='', copy='&copy;2015 Getty Ritter' }}
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8;" />
+    {{#usejs}}
+      <script language="javascript" src="/static/jquery.js"></script>
+      <script language="javascript" src="/static/quotes.js"></script>
+    {{/usejs}}
+    <link rel="stylesheet" type="text/css" href="/static/main.css" />
+    <title>Librarian of Alexandria: {{title}}</title>
+  </head>
+  <body {{#onload}}onLoad={{onload}}{{/onload}}>
+    <div class="all">
+      <div class="header">
+    <div class="sitename">
+      <h1>Librarian of Alexandria</h1>
+    </div>
+    <div class="title">
+      <h2>{{title}}</h2>
+    </div>
+      </div>
+      <div class="menu">
+    <a href="/">Index</a>&nbsp;&nbsp;&nbsp;
+    <a href="/category/">Collections</a>&nbsp;&nbsp;&nbsp;
+    <a href="/quotes/">Quotes</a>&nbsp;&nbsp;&nbsp;
+    <a href="/quips/">Quips</a>&nbsp;&nbsp;&nbsp;
+    <a href="http://khuzd.librarianofalexandria.com/">Khuzd</a>&nbsp;&nbsp;&nbsp;
+    <a href="http://blog.infinitenegativeutility.com/">Blog</a>&nbsp;&nbsp;&nbsp;
+    <a href="/about/">About</a>
+      </div>
+      <div class="contents">
+    {{{contents}}}
+      </div>
+      <div class="footer">
+    {{copy}}{{^copy}}&copy;2015 Getty Ritter{{/copy}}
+      </div>
+    </div>
+  </body>
+</html>

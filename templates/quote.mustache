@@ -1,0 +1,15 @@
+<div class="quotes">
+  {{#quotelist}}
+    <div class="quote" id="{{id}}">
+      {{{content}}}
+    {{#author}}
+      <div class="author">
+        &mdash;{{{author}}}
+      </div>
+    {{/author}}
+    {{^focus}}
+      <div class="quotelink"><a href="#{{id}}" onClick="doHighlight('{{id}}')">#{{id}}</a></div>
+    {{/focus}}
+    </div>
+  {{/quotelist}}
+</div>

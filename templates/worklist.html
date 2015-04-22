@@ -1,0 +1,23 @@
+{{! (pgnum, maxpg, works, show_cat, page='recent') }}
+<div class="maintext">
+  {{#works}}
+    <div class="work">
+      <a href="/{{slug}}/">{{name}}</a>
+      {{#showcat}}
+        &mdash; <a href="/category/{{category}}/">{{category}}</a>
+      {{/showcat}}
+    </div>
+  {{/works}}
+{{!
+  <div class="backforward">
+  $if pgnum > 0:
+    <span class="back">
+    <a href="/$page/?page=$(pgnum - 1)">previous</a>
+    </span>
+  $if pgnum < maxpg:
+    <span class="forward">
+    <a href="/$page/?page=$(pgnum + 1)">next</a>
+    </span>
+  </div>
+}}
+</div>
