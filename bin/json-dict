@@ -5,6 +5,7 @@ import sys
 import yaml
 
 def coerce(arg):
+  if not arg: return None
   if arg[0] == '@':
     try:
       with open(arg[0]) as f: return coerce(f.read())
@@ -14,13 +15,6 @@ def coerce(arg):
   except: pass
   try:    return json.loads(arg)
   except: pass
-  try:    return int(arg)
-  except: pass
-  try:    return float(arg)
-  except: pass
-  if arg in ('true', 'True'): return True
-  if arg in ('false', 'False'): return False
-  if arg == 'null': return None
   return arg
 
 if len(sys.argv[1:]) % 2 == 1:

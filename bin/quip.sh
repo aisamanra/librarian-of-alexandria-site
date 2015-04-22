@@ -1,4 +1,10 @@
-#!/bin/sh
+#!/bin/sh -e
+
+if [ "$#" -lt "2" ]; then
+    echo "Not enough arguments to $(basename $0)"
+    echo "Usage: $(basename $0) [data-dir] [quip file]"
+    exit 1
+fi
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 PATH=$DIR:$PATH

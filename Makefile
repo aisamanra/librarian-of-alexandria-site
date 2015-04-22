@@ -69,11 +69,11 @@ $(OUTDIR)/%/index.html: $(DATADIR)/works/*/% templates/textpage.mustache templat
 	mkdir -p `dirname $@`
 	bin/work.sh $(DATADIR) $< >$@
 
-$(OUTDIR)/category/%/index.html: $(DATADIR)/works/% $(DATADIR)/works/%/* templates/worklist.mustache templates/main.mustache
+$(OUTDIR)/category/%/index.html: $(DATADIR)/works/% $(DATADIR)/works/%/* templates/list.mustache templates/main.mustache
 	mkdir -p `dirname $@`
 	bin/category.sh $(DATADIR) $< >$@
 
-$(OUTDIR)/category/index.html: templates/worklist.mustache templates/main.mustache
+$(OUTDIR)/category/index.html: templates/list.mustache templates/main.mustache
 	mkdir -p `dirname $@`
 	bin/all-categories.sh $(DATADIR) >$@
 
