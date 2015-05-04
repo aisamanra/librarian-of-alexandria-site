@@ -24,7 +24,7 @@ works_src=$(notdir $(wildcard $(DATADIR)/works/*/*))
 quotes_tgt=$(quotes_src:$(DATADIR)/quotes/%=$(OUTDIR)/quotes/%/index.html)
 quips_tgt=$(quips_src:$(DATADIR)/quips/%=$(OUTDIR)/quips/%/index.html)
 links_tgt=$(links_src:$(DATADIR)/links/%=$(OUTDIR)/links/%/index.html)
-scraps_tgt=$(scraps_src:$(DATADIR)/links/%=$(OUTDIR)/links/%/index.html)
+scraps_tgt=$(scraps_src:$(DATADIR)/scraps/%=$(OUTDIR)/scraps/%/index.html)
 cats_tgt=$(cats_src:%=$(OUTDIR)/category/%/index.html)
 
 works_tgt=$(works_src:%=$(OUTDIR)/%/index.html)
