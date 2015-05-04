@@ -1,7 +1,7 @@
 # The set of basic pages we want to generate
 pages=$(OUTDIR)/quotes/index.html $(OUTDIR)/quips/index.html \
   $(OUTDIR)/links/index.html $(OUTDIR)/category/index.html \
-  $(OUTDIR)/index.html
+  $(OUTDIR)/scraps/index.html $(OUTDIR)/index.html
 
 # The static files we just need to copy
 static_tgt=$(OUTDIR)/static/jquery.js \
@@ -16,6 +16,7 @@ cats_src=comics fascicles poems stories
 quotes_src=$(wildcard $(DATADIR)/quotes/*)
 quips_src=$(wildcard $(DATADIR)/quips/*)
 links_src=$(wildcard $(DATADIR)/links/*)
+scraps_src=$(wildcard $(DATADIR)/scraps/*)
 works_src=$(notdir $(wildcard $(DATADIR)/works/*/*))
 
 # and figure out what the $(OUTDIR) file will be called by matching
@@ -23,13 +24,14 @@ works_src=$(notdir $(wildcard $(DATADIR)/works/*/*))
 quotes_tgt=$(quotes_src:$(DATADIR)/quotes/%=$(OUTDIR)/quotes/%/index.html)
 quips_tgt=$(quips_src:$(DATADIR)/quips/%=$(OUTDIR)/quips/%/index.html)
 links_tgt=$(links_src:$(DATADIR)/links/%=$(OUTDIR)/links/%/index.html)
+scraps_tgt=$(scraps_src:$(DATADIR)/links/%=$(OUTDIR)/links/%/index.html)
 cats_tgt=$(cats_src:%=$(OUTDIR)/category/%/index.html)
 
 works_tgt=$(works_src:%=$(OUTDIR)/%/index.html)
 
 # ------------------------------------------------------------------------------
 
-all: $(pages) $(quotes_tgt) $(quips_tgt) $(links_tgt) $(works_tgt) \
+all: $(pages) $(quotes_tgt) $(quips_tgt) $(links_tgt) $(works_tgt) $(scraps_tgt) \
   $(cats_tgt) $(static_tgt)
 
 # ------------------------------------------------------------------------------
