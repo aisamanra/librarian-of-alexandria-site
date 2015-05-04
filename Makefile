@@ -43,7 +43,7 @@ $(OUTDIR)/quotes/index.html: $(DATADIR)/quotes/* templates/quote.mustache templa
 	mkdir -p `dirname $@`
 	bin/quote.sh $(DATADIR) all >$@
 
-$(OUTDIR)/quips/index.html: $(DATADIR)/quotes/* templates/quote.mustache templates/main.mustache
+$(OUTDIR)/quips/index.html: $(DATADIR)/quips/* templates/quote.mustache templates/main.mustache
 	mkdir -p `dirname $@`
 	bin/quip.sh $(DATADIR) all >$@
 
