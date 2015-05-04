@@ -37,6 +37,8 @@ all: $(pages) $(quotes_tgt) $(quips_tgt) $(links_tgt) $(works_tgt) \
 # A lot of these are boringly similar: probably should come up with a way of abstracting
 # this common pattern, but, y'know, Make...
 
+# These are the list page views:
+
 $(OUTDIR)/quotes/index.html: $(DATADIR)/quotes/* templates/quote.mustache templates/main.mustache
 	mkdir -p `dirname $@`
 	bin/quote.sh $(DATADIR) all >$@
@@ -49,7 +51,13 @@ $(OUTDIR)/links/index.html: $(DATADIR)/links/* templates/link.mustache templates
 	mkdir -p `dirname $@`
 	bin/link.sh $(DATADIR) all >$@
 
+$(OUTDIR)/scraps/index.html: $(DATADIR)/scraps/* templates/scrap.mustache templates/main.mustache
+	mkdir -p `dirname $@`
+	bin/scrap.sh $(DATADIR) all >$@
+
 # ------------------------------------------------------------------------------
+
+# These are the individual element pages:
 
 $(OUTDIR)/quotes/%/index.html: $(DATADIR)/quotes/% templates/quote.mustache templates/main.mustache
 	mkdir -p `dirname $@`
@@ -63,7 +71,15 @@ $(OUTDIR)/links/%/index.html: $(DATADIR)/links/% templates/link.mustache templat
 	mkdir -p `dirname $@`
 	bin/link.sh $(DATADIR) $< >$@
 
+$(OUTDIR)/scraps/%/index.html: $(DATADIR)/scraps/% templates/scrap.mustache templates/main.mustache
+	mkdir -p `dirname $@`
+	bin/link.sh $(DATADIR) $< >$@
+
 # ------------------------------------------------------------------------------
+
+# These are the works-related pages:
+# (It was important to me to stick the works at the root instead of in
+# subdirs pertaining to their category.)
 
 $(OUTDIR)/%/index.html: $(DATADIR)/works/*/% templates/textpage.mustache templates/main.mustache
 	mkdir -p `dirname $@`
