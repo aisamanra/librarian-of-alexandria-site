@@ -75,7 +75,7 @@ $(OUTDIR)/links/%/index.html: $(DATADIR)/links/% templates/link.mustache templat
 
 $(OUTDIR)/scraps/%/index.html: $(DATADIR)/scraps/% templates/scrap.mustache templates/main.mustache
 	mkdir -p `dirname $@`
-	bin/link.sh $(DATADIR) $< >$@
+	bin/scrap.sh $(DATADIR) $< >$@
 
 # ------------------------------------------------------------------------------
 
