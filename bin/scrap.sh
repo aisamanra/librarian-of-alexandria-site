@@ -16,11 +16,10 @@ else
     ARGS="$2"
     FOCUS=true
 fi
-COPY="&copy;2015 Getty Ritter (ain't no rights that ain't reserved)"
 
 json-list -c $ARGS                      \
   | pretty-quote                        \
   | json-dict scraplist - focus $FOCUS  \
   | mustache - templates/scrap.mustache \
-  | json-dict title Scraps contents - usejs true copy "$COPY" onload '"doLoadHighlight()"'  \
+  | json-dict title Scraps contents - usejs true onload '"doLoadHighlight()"'  \
   | mustache - templates/main.mustache
