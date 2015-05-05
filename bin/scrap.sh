@@ -16,7 +16,7 @@ else
     ARGS="$2"
     FOCUS=true
 fi
-COPY="\copy;2015 Getty Ritter (ain't no rights that ain't reserved)"
+COPY="&copy;2015 Getty Ritter (ain't no rights that ain't reserved)"
 
 json-list -c $ARGS                      \
   | pretty-quote                        \
