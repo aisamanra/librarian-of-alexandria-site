@@ -1,68 +1,75 @@
 @font-face {
-    /*
-       Junction from Caroline Hadilaksono,
-       via the League of Movable Type
-       ( http://www.theleagueofmoveabletype.com/fonts/1-junction )
-       Thank you!
-    */
-    font-family: junction;
-    src: url("junction.otf");
+    font-family: league-spartan;
+    src: url("/static/leaguespartan-bold.ttf");
 }
 
 body {
-    color: #eeeeee;
-    line-height: 150%;
-    background-color: #070707;
-    font-family: junction, "Arial", sans-serif;
-}
-
-a:link {
-    color: #876ed7;
-}
-
-a:visited {
-    color: #3914af;
+	background-color: #eeeeee;
+	font-family: league-spartan, sans-serif;
+	font-size: 14pt;
 }
 
 .header {
-    text-align: center;
-    letter-spacing: 2px;
-    line-height: 200%;
+	padding: 20px;
+	text-transform: uppercase;
 }
 
-.menu {
-    background-color: #070707;
-    letter-spacing: 1px;
-    text-align: center;
-    width: 95%;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
+.sitename {
+	margin: 0px;
+	font-size: 24pt;
+	letter-spacing: 4px;
+	padding-left: 40px;
+	color: #ccc;
+	padding-right: 80px;
+	margin-top: -40px;
+	text-align: right;
 }
 
-.all {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
-    background-color: #111111;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
+.title {
+	margin-left: 40px;
+	margin-top: -40px;
+	letter-spacing: 4px;
 }
 
 .contents {
-    text-indent: 20px;
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+	text-align: justify;
+	line-height: 1.5;
+	padding: 40px;
+	font-family: "Helvetica", "Arial", sans-serif;
+	margin: 40px;
+	width: 80%;
+	background-color: #e8e8e8;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.menu {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-width: 1px;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a:link {
+	text-decoration: none;
+	color: #cc3366;
+}
+
+a:visited {
+	color: #993366;
+}
+
+.footer {
+	text-align: center;
+	letter-spacing: 4px;
+	text-transform: uppercase;
 }
 
 pre {
@@ -70,86 +77,39 @@ pre {
     padding-left: 20px;
 }
 
-.backforward {
-    margin-top: 10px;
-    text-indent: 0px;
-    text-align: center;
-}
-
-.footer {
-    background-color: #070707;
-    text-align: center;
-    width: 95%;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
-}
-
 .quote {
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: #070707;
-    margin: 20px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-width: 1px;
+	padding: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #eee;
 }
-
-.scrap {
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: #070707;
-    margin: 20px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
+.quotelink {
+	margin-top: 10px;
+	text-align: right;
+	font-size: 12pt;
 }
 
 .link {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: #070707;
-    padding: 20px;
-    margin: 20px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-width: 1px;
+	padding: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #eee;
 }
-
-.maintext {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: #070707;
-    padding: 20px;
-    margin: 20px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
-}
-
-.author { text-align: right; }
-.name { font-size: large; }
-.description { font-size: small; }
-.related { text-align: right; font-size: small; }
-
-.url {
-  font-size: small;
-  text-align: right;
-}
-
-.quotelink {
-    font-size: small;
-    text-align: right;
-}
-
 .permalink {
-    font-size: small;
-    text-align: right;
+	margin-top: 10px;
+	text-align: right;
+	font-size: 12pt;
 }
+
