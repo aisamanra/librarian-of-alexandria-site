@@ -9,6 +9,16 @@
       <script language="javascript" src="/static/jquery.js"></script>
       <script language="javascript" src="/static/quotes.js"></script>
     {{/usejs}}
+    {{#opengraph}}
+      <meta property="og:title" content="{{title}}"/>
+      <meta property="og:type" content="website"/>
+      <meta property="og:url" content="{{url}}"/>
+      <meta property="og:description" content="{{description}}"/>
+      <meta property="og:image" content="/static/icon.png"/>
+      <meta property="og:image:width" content="120"/>
+      <meta property="og:image:height" content="120"/>
+      <meta property="og:site_name" content="Librarian of Alexandria"/>
+    {{/opengraph}}
     <link rel="stylesheet" type="text/css" href="/static/main.css" />
     <title>Librarian of Alexandria: {{title}}</title>
   </head>

@@ -12,7 +12,7 @@ def coerce(arg):
         return coerce(f.read())
     except: pass
   if arg == '-': return coerce(sys.stdin.read())
-  try:    return yaml.load(arg)
+  try:    return yaml.safe_load(arg)
   except: pass
   try:    return json.loads(arg)
   except: pass

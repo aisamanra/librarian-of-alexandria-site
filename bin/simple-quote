@@ -1,0 +1,12 @@
+#!/bin/python2
+
+import json
+import markdown
+import sys
+
+o = json.loads(sys.stdin.read())
+l = o[0]
+print(l['content'].encode('utf-8'))
+if 'author' in l:
+    print('')
+    print((u'---' + l['author']).encode('utf-8'))
