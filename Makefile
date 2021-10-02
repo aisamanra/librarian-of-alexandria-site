@@ -10,7 +10,7 @@ static_tgt=$(OUTDIR)/static/jquery.js \
 
 # (We should generate this list another way, but it's unlikely to
 # change with any regularity)
-cats_src=comics fascicles poems stories
+cats_src=comics fascicles poems stories strophes
 
 # We find all the stuff we want to generate...
 quotes_src=$(wildcard $(DATADIR)/quotes/*)
@@ -91,7 +91,7 @@ $(OUTDIR)/category/%/index.html: $(DATADIR)/works/% $(DATADIR)/works/%/* templat
 	mkdir -p `dirname $@`
 	bin/category.sh $(DATADIR) $< >$@
 
-$(OUTDIR)/category/index.html: templates/list.mustache templates/main.mustache
+$(OUTDIR)/category/index.html: templates/list.mustache templates/main.mustache $(DATADIR)/works.json
 	mkdir -p `dirname $@`
 	bin/all-categories.sh $(DATADIR) >$@
 
